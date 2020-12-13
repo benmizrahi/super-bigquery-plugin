@@ -1,5 +1,5 @@
 {
-  "name": "ben-mizrahi-super-bigquery-plugin",
+  "name": "bm-grafana-bigquery-plugin",
   "version": "1.0.0",
   "description": "A Grafana BigQuery plugin that works :)",
   "scripts": {
@@ -8,20 +8,19 @@
     "dev": "grafana-toolkit plugin:dev",
     "watch": "grafana-toolkit plugin:dev --watch"
   },
-  "repository": "github:grafana/simple-react-panel",
   "author": "Ben Mizrahi",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/grafana/simple-react-panel/issues",
-    "email": "plugins@grafana.com"
-  },
   "devDependencies": {
-    "@grafana/data": "^7.0.0",
-    "@grafana/toolkit": "^7.0.0",
-    "@grafana/ui": "^7.0.0",
-    "emotion": "10.0.27"
+    "@grafana/data": "latest",
+    "@grafana/toolkit": "latest",
+    "@grafana/runtime": "latest",
+    "@grafana/ui": "latest",
+    "@types/lodash": "latest"
   },
   "engines": {
     "node": ">=12 <13"
+  },
+  "resolutions": {
+    "rxjs": "6.6.3"
   }
 }

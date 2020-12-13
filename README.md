@@ -1,26 +1,26 @@
-# Grafana Panel Plugin Template
+# Grafana Data Source Backend Plugin Template
 
-<!-- 
-[![CircleCI](https://circleci.com/gh/grafana/simple-react-panel.svg?style=svg)](https://circleci.com/gh/grafana/simple-react-panel)
-[![David Dependency Status](https://david-dm.org/grafana/simple-react-panel.svg)](https://david-dm.org/grafana/simple-react-panel)
-[![David Dev Dependency Status](https://david-dm.org/grafana/simple-react-panel/dev-status.svg)](https://david-dm.org/grafana/simple-react-panel/?type=dev)
-[![Known Vulnerabilities](https://snyk.io/test/github/grafana/simple-react-panel/badge.svg)](https://snyk.io/test/github/grafana/simple-react-panel)
-[![Maintainability](https://api.codeclimate.com/v1/badges/1dee2585eb412f913cbb/maintainability)](https://codeclimate.com/github/grafana/simple-react-panel/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/1dee2585eb412f913cbb/test_coverage)](https://codeclimate.com/github/grafana/simple-react-panel/test_coverage) -->
+[![CircleCI](https://circleci.com/gh/grafana/simple-datasource-backend/tree/master.svg?style=svg)](https://circleci.com/gh/grafana/simple-datasource-backend/tree/master)
 
-This template is a starting point for building Grafana Panel Plugins in Grafana 7.0+
+This template is a starting point for building Grafana Data Source Backend Plugins
 
+## What is Grafana Data Source Backend Plugin?
 
-## What is Grafana Panel Plugin?
-Panels are the building blocks of Grafana. They allow you to visualize data in different ways. While Grafana has several types of panels already built-in, you can also build your own panel, to add support for other visualizations.
+Grafana supports a wide range of data sources, including Prometheus, MySQL, and even Datadog. There’s a good chance you can already visualize metrics from the systems you have set up. In some cases, though, you already have an in-house metrics solution that you’d like to add to your Grafana dashboards. Grafana Data Source Plugins enables integrating such solutions with Grafana.
 
-For more information about panels, refer to the documentation on [Panels](https://grafana.com/docs/grafana/latest/features/panels/panels/)
+For more information about backend plugins, refer to the documentation on [Backend plugins](https://grafana.com/docs/grafana/latest/developers/plugins/backend/).
 
 ## Getting started
+
+A data source backend plugin consists of both frontend and backend components.
+
+### Frontend
+
 1. Install dependencies
 ```BASH
 yarn install
 ```
+
 2. Build plugin in development mode or run in watch mode
 ```BASH
 yarn dev
@@ -34,8 +34,28 @@ yarn watch
 yarn build
 ```
 
+### Backend
+
+1. Update [Grafana plugin SDK for Go](https://grafana.com/docs/grafana/latest/developers/plugins/backend/grafana-plugin-sdk-for-go/) dependency to the latest minor version:
+
+```bash
+go get -u github.com/grafana/grafana-plugin-sdk-go
+```
+
+2. Build backend plugin binaries for Linux, Windows and Darwin:
+```BASH
+mage -v
+```
+
+3. List all available Mage targets for additional commands:
+```BASH
+mage -l
+```
+
 ## Learn more
-- [Build a panel plugin tutorial](https://grafana.com/tutorials/build-a-panel-plugin)
+
+- [Build a data source backend plugin tutorial](https://grafana.com/tutorials/build-a-data-source-backend-plugin)
 - [Grafana documentation](https://grafana.com/docs/)
 - [Grafana Tutorials](https://grafana.com/tutorials/) - Grafana Tutorials are step-by-step guides that help you make the most of Grafana
 - [Grafana UI Library](https://developers.grafana.com/ui) - UI components to help you build interfaces using Grafana Design System
+- [Grafana plugin SDK for Go](https://grafana.com/docs/grafana/latest/developers/plugins/backend/grafana-plugin-sdk-for-go/)

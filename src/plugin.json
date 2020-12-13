@@ -1,7 +1,10 @@
 {
-  "type": "panel",
-  "name": "super-bigquery-plugin",
-  "id": "ben-mizrahi-super-bigquery-plugin",
+  "type": "datasource",
+  "name": "grafana-bigquery-plugin",
+  "id": "bm-grafana-bigquery-plugin",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_grafana-bigquery-plugin",
   "info": {
     "description": "A Grafana BigQuery plugin that works :)",
     "author": {
@@ -9,7 +12,7 @@
       "url": ""
     },
     "keywords": [
-      "BigQuery",
+      "BiqQuery",
       "Grafana"
     ],
     "logos": {
@@ -19,11 +22,11 @@
     "links": [
       {
         "name": "Website",
-        "url": "https://github.com/grafana/simple-react-panel"
+        "url": "https://github.com/grafana/simple-datasource-backend"
       },
       {
         "name": "License",
-        "url": "https://github.com/grafana/simple-react-panel/blob/master/LICENSE"
+        "url": "https://github.com/grafana/simple-datasource-backend/blob/master/LICENSE"
       }
     ],
     "screenshots": [],
@@ -31,7 +34,7 @@
     "updated": "%TODAY%"
   },
   "dependencies": {
-    "grafanaVersion": "7.0.x",
+    "grafanaVersion": "7.x.x",
     "plugins": []
   }
 }
